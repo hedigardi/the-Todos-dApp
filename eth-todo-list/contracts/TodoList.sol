@@ -11,17 +11,22 @@ contract TodoList {
     }
 
     mapping(uint256 => Todo) public todos;
+    uint256[] public todoIds; // Ny array för att spara todo-ID:n
 
     event TodoCreated(uint256 id, string text, bool completed);
-
     event ToggleTodo(uint256 id, bool completed);
-
     event RemovedTodo(uint256 id);
 
     function createTodo(string memory _content) public {
         todoCount++;
         todos[todoCount] = Todo(todoCount, _content, false);
+        todoIds.push(todoCount); // Lägg till det nya todo-ID:t i arrayen
         emit TodoCreated(todoCount, _content, false);
+    }
+
+    // Ny funktion för att hämta en lista över todo-ID:n
+    function getTodoIds() public view returns (uint256[] memory) {
+        return todoIds;
     }
 
     function toggleTodo(uint256 _id) public {
