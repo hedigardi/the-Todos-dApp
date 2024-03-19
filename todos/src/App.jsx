@@ -1,20 +1,13 @@
 import { useState, useEffect } from "react";
 import { TodoService } from "./services/TodoService";
-import { Todos } from "./components/Todos";
-import { AddTodo } from "./components/AddTodo";
+import TodosList from "./components/TodosList";
+import AddTodoForm from "./components/AddTodoForm";
 
 function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
     populateTodos();
-  }, []);
-
-   useEffect(() => {
-    const updateTodos = async () => {
-      await populateTodos();
-    };
-    updateTodos();
   }, [todos]);
 
   const populateTodos = async () => {
@@ -23,36 +16,28 @@ function App() {
   };
 
   const addTodo = async (todoText) => {
-    const success = await TodoService.createTodo(todoText);
-    if (success) {
-      populateTodos();
-    } else {
-      console.error("Failed to add todo");
-    }
+    await TodoService.createTodo(todoText);
+    populateTodos();
   };
 
   const toggleTodo = async (todoId) => {
-    const success = await TodoService.toggleTodo(todoId);
-    if (success) {
-      populateTodos();
-    } else {
-      console.error("Failed to toggle todo");
-    }
+    await TodoService.toggleTodo(todoId);
+    populateTodos();
   };
 
   const deleteTodo = async (todoId) => {
-    const success = await TodoService.deleteTodo(todoId);
-    if (success) {
-      populateTodos();
-    } else {
-      console.error("Failed to delete todo");
-    }
+    await TodoService.deleteTodo(todoId);
+    populateTodos();
   };
 
   return (
     <div>
-      <AddTodo addTodo={addTodo} />
-      <Todos todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <AddTodoForm addTodo={addTodo} />
+      <TodosList
+        todos={todos}
+        toggleTodo={toggleTodo}
+        deleteTodo={deleteTodo}
+      />
     </div>
   );
 }

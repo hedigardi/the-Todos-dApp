@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const AddTodo = ({ addTodo }) => {
+const AddTodoForm = ({ addTodo }) => {
   const [todoText, setTodoText] = useState("");
 
   const handleChange = (e) => {
@@ -9,10 +9,8 @@ export const AddTodo = ({ addTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (todoText.trim() !== "") {
-      addTodo(todoText);
-      setTodoText("");
-    }
+    addTodo(todoText);
+    setTodoText("");
   };
 
   return (
@@ -27,3 +25,5 @@ export const AddTodo = ({ addTodo }) => {
     </form>
   );
 };
+
+export default AddTodoForm;
