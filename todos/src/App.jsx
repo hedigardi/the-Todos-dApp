@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { TodoService } from "./services/TodoService";
 import TodosList from "./components/TodosList";
 import AddTodoForm from "./components/AddTodoForm";
+import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -31,7 +32,8 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="App">
+      <h1>Todo dApp</h1>
       <AddTodoForm addTodo={addTodo} />
       <TodosList
         todos={todos}

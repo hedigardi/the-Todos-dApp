@@ -5,12 +5,18 @@
   text-align: center;
 }
 
+html,
 body {
-  background: linear-gradient(to right, #e7ebec, #ceeaf1);
+  background: linear-gradient(to right, #e7ebec, #e6cef1);
   font-size: 1.1rem;
-  font-family: 'Quicksand', sans-serif;
-  color: #083c47;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2e0847;
   height: 100%;
+}
+
+.App {
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .logo {
@@ -44,6 +50,33 @@ body {
   }
 }
 
+form {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+input {
+  border: none;
+  background: #e3dee7;
+  color: #2e0847;
+  padding: 0 1.5em;
+  font-size: initial;
+  height: 2rem;
+  width: 300px;
+  border-radius: 30px;
+  border: solid 1px;
+  border-color: #2e0847;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
 .card {
   padding: 2em;
 }
@@ -52,22 +85,76 @@ body {
   color: #888;
 }
 
+button {
+  padding: 0 1.3rem;
+  border: none;
+  background: #2e0847;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 10px;
+  height: 2rem;
+  cursor: pointer;
+  transition: background .2s ease-out;
+  border-radius: 30px;
+}
+
+button:hover {
+  background: #4e0b7a;
+}
+
+.btn-delete {
+  padding: 0 1.3rem;
+  border: none;
+  background: #d65e5e;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 10px;
+  height: 2rem;
+  cursor: pointer;
+  transition: background .2s ease-out;
+}
+
+.btn-delete:hover {
+  background: #9e5c5c;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 li {
   margin: 0.5rem;
   padding: 0.5rem 0.5rem;
   list-style-type: none;
-  background-color: #083c47;
+  background-color: #2e0847;
   color: white;
   border-radius: 30px;
   width: calc(50% - 2rem);
-  max-width: 450px;
-  min-width: 450px;
+  max-width: 600px;
+  min-width: 600px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-ul {
-  list-style-type: none;
+li span {
+  flex: 1;
+  text-align: left;
+}
+
+li button {
+  margin-left: 1rem;
+}
+
+.completed {
+  background-color: #67c797;
+  color: #2e0847;
+  transform: translateY(10px);
+  transition: transform 0.5s ease-in-out;
 }

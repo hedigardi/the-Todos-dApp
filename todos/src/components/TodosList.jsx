@@ -1,15 +1,27 @@
-import TodoItem from "./TodoItem";
-
 const TodosList = ({ todos, toggleTodo, deleteTodo }) => {
+  const handleCheckboxChange = async (todoId) => {
+    toggleTodo(todoId);
+  };
+
+  const handleDeleteClick = async (todoId) => {
+    deleteTodo(todoId);
+  };
+
   return (
     <ul>
       {todos.map((todo) => (
-        <TodoItem
+        <li
           key={todo.id}
-          todo={todo}
-          toggleTodo={toggleTodo}
-          deleteTodo={deleteTodo}
-        />
+          className={todo.completed ? "completed" : ""}
+        >
+          <input
+            type="checkbox"
+            checked={todo.completed}
+            onChange={() => handleCheckboxChange(todo.id)}
+          />
+          <span>{todo.text}</span>
+          <button onClick={() => handleDeleteClick(todo.id)} className="btn-delete">Delete</button>
+        </li>
       ))}
     </ul>
   );

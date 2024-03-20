@@ -17,7 +17,7 @@ const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
       <span style={{ textDecoration: todo.completed ? "line-through" : "none" }}>
         {todo.text}
       </span>
-      <button onClick={() => handleDeleteClick(todo.id)}>Delete</button>
+      <button onClick={() => handleDeleteClick(todo.id)} className="btn-delete">Delete</button>
     </li>
   );
 };

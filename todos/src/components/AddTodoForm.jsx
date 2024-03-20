@@ -17,7 +17,7 @@ const AddTodoForm = ({ addTodo }) => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Add to the todo list"
+        placeholder="Add to the Todo list"
         value={todoText}
         onChange={handleChange}
       />
