@@ -21,7 +21,7 @@ const AddTodoForm = ({ addTodo }) => {
         value={todoText}
         onChange={handleChange}
       />
-      <button type="submit">Add item</button>
+      <button type="submit" className="btn-add">Add item</button>
     </form>
   );
 };
