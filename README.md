@@ -1,1 +1,18 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/shSoOe6P)
+# The Todos dApp
+Welcome to the Todos dApp.
+
+<img src="https://github.com/hedigardi/the-Todos/blob/main/src/assets/images/website.jpg" alt="The Todos App" width="650px">
+
+## Installation
+1. Clone the Todos dApp repository:
+   ```bash
+   git clone https://github.com/hedigardi/the-Todos-dApp.git
+    ```
+2. Install the dependencies:
+   ```bash
+   npm install
+    ```
+3. Start the application:
+   ```bash
+   npm run dev
+    ```
