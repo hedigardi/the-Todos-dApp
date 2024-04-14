@@ -1,7 +1,7 @@
 # The Todos dApp
 Welcome to the Todos dApp.
 
-<img src="https://github.com/hedigardi/the-Todos/blob/main/src/assets/images/website.jpg" alt="The Todos App" width="650px">
+<img src="https://github.com/hedigardi/the-Todos-dApp/blob/main/todos/src/assets/website.jpg" alt="The Todos App" width="650px">
 
 ## Installation
 1. Clone the Todos dApp repository:
